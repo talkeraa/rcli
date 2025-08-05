@@ -1,4 +1,4 @@
-use rcli::{Opst,Subcommand,process_csv};
+use rcli::{Opst,Subcommand,process_csv,process_genpass};
 use clap::Parser;
 fn main() -> anyhow::Result<()>{
     let opts=Opst::parse();
@@ -10,6 +10,9 @@ fn main() -> anyhow::Result<()>{
                 format!("output.{}",csv_opts.fotmat)
             };
             process_csv(&csv_opts.input,&output,csv_opts.fotmat)?;
+        }
+        Subcommand::GenPass(gen_pass_opts)=>{
+            process_genpass(gen_pass_opts)?;
         }
     }
     Ok(())
