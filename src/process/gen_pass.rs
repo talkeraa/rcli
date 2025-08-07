@@ -1,6 +1,6 @@
 use std::str::from_utf8;
 
-use crate::opts::GenPassOpts;
+use crate::cli::genpass::GenPassOpts;
 use anyhow;
 use rand::Rng;
 use rand::seq::{IndexedRandom, SliceRandom};
